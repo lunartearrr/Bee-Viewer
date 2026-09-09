@@ -1,0 +1,68 @@
+/* standaard thema [NOG NIET AF] */
+:root {
+    --dark: #4a4a4a;
+    --mid: #a9a9a9;
+    --bg: #f2f2f2;
+    --card: #ffffff;
+    --panel: #f7f7f7;
+    --footer: #6f6f6f;
+
+    /* standaard kleuren om te gebruiken */
+    --accent-green: #6b8e23;
+    --accent-gray: #898989;
+    --accent-red: #b83232;
+    --accent-orange: #d97706;
+}
+
+/* bijen thema [NOG NIET AF] */
+/* momenteel wordt dit thema gebruikt, als je het standaard thema wilt toepassen verwijder dan "data-theme="bee" uit het <html> root element in datakaart.html en bijenkaart.html :) */
+[data-theme="bee"] {
+    --dark: #492306c2;
+    --mid: #DEDE6793;
+    --bg: #f7efd2;
+    --card: #fffaf0;
+    --panel: #fdf6e3;
+    --footer: #77A962C6;
+
+    /* standaard kleuren om te gebruiken*/
+    --accent-green: #77A962C6;
+    --accent-gray: #898989;
+    --accent-red: #A52B1ED3;
+    --accent-orange: #D9A441CE;
+}
+
+/* past het font overal toe */
+* {
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 24px;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+footer {
+    text-align: center;
+    color: var(--bg);
+    padding: 16px;
+    font-weight: bold;
+    border-top: 2px dotted wheat;
+    background: var(--footer);
+}
+
