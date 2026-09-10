@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl" data-theme="bee">
+<head>
+    <meta charset="UTF-8">
+    <title>Bee Viewer - Bijenkaart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+    <nav>
+        <a href="datakaart.html">Datakaart</a>
+        <a href="bijenkaart.html" class="active">Bijenkaart</a>
+    </nav>
+    <button class="logout">Log uit</button>
+</div>
+<main>
+    <div class="card">
+        <div class="page-title">Bee Viewer - Bijenkaart</div>
+        <div class="layout">
+            <div class="panel">
+                <div class="panel-title" id="regio-titel">Bijenkaart</div>
+                <div class="panel-body">
+                    <div class="map-box">
+                        <div class="map-note">kaart ingezoomd op geselecteerde regio</div>
+                        <div class="dot" style="top:40%; left:30%; background:var(--accent-green);"></div>
+                        <div class="dot" style="top:55%; left:50%; background:var(--accent-gray);"></div>
+                        <div class="dot" style="top:35%; left:65%; background:var(--accent-orange);"></div>
+                    </div>
+                    <div class="legend">
+                        <div class="row">
+                            <div class="swatch" style="background:var(--accent-green);"></div>
+                            Actief
+                        </div>
+                        <div class="row">
+                            <div class="swatch" style="background:var(--accent-gray);"></div>
+                            Inactief
+                        </div>
+                        <div class="row">
+                            <div class="swatch" style="background:var(--accent-orange);"></div>
+                            Batterij laag
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="panel" style="margin-bottom: 14px;">
+                    <div class="panel-title">Regio (kies één)</div>
+                    <div class="panel-body radio-list" id="regio-lijst">
+                        <label><input type="radio" name="regio" value="Regio A" checked> Regio A</label>
+                        <label><input type="radio" name="regio" value="Regio B"> Regio B</label>
+                        <label><input type="radio" name="regio" value="Regio C"> Regio C</label>
+                        <label><input type="radio" name="regio" value="Regio D"> Regio D</label>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title">Filter</div>
+                    <div class="panel-body check-list">
+                        <label><input type="checkbox" checked> Actief</label>
+                        <label><input type="checkbox"> Inactief</label>
+                        <label><input type="checkbox" checked> Batterij laag</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>© 2026 Bee Viewer, Inc. Alle rechten voorbehouden.</footer>
+<script>
+    // de titel verandert op basis van de gekozen regio
+    document.querySelectorAll('input[name="regio"]').forEach(input => {
+        input.addEventListener('change', () => {
+            document.getElementById('regio-titel').textContent = 'Bijenkaart: ' + input.value;
+        });
+    });
+</script>
+</body>
+</html>

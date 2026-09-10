@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl" data-theme="bee">
+<head>
+    <meta charset="UTF-8">
+    <title>Bee Viewer - Datakaart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+    <nav>
+        <a href="datakaart.html" class="active">Datakaart</a>
+        <a href="bijenkaart.html">Bijenkaart</a>
+    </nav>
+    <button class="logout">Log uit</button>
+</div>
+<main>
+    <div class="card">
+        <div class="page-title">Bee Viewer - Datakaart</div>
+        <div class="layout">
+            <div class="panel">
+                <div class="panel-title">Datakaart</div>
+                <div class="panel-body">
+                    <div class="map-box">
+                        <div class="map-note">kaartweergave ( zones tonen gemeten concentratie )</div>
+                    </div>
+                    <div class="flex-box">
+                        <div class="legend">
+                            <div class="row">
+                                <div class="swatch" style="background:  var(--accent-green);; border-radius:2px;"></div>
+                                laag
+                            </div>
+                            <div class="row">
+                                <div class="swatch" style="background: var(--accent-orange);; border-radius:2px;"></div>
+                                gemiddeld
+                            </div>
+                            <div class="row">
+                                <div class="swatch" style="background: var(--accent-red); border-radius:2px;"></div>
+                                hoog
+                            </div>
+                        </div>
+                        <div class="time-row">
+                            <label for="tijd-kiezer">Tijdstip:</label>
+                            <input type="time" id="tijd-kiezer" value="10:30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="panel">
+                    <div class="panel-title">Lagen</div>
+                    <div class="panel-body check-list">
+                        <label><input type="checkbox" checked>Laag 1</label>
+                        <label><input type="checkbox">Laag 2</label>
+                        <label><input type="checkbox" checked>Laag 3</label>
+                        <label><input type="checkbox" checked>Laag 4</label>
+                        <label><input type="checkbox">Laag 5</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>© 2026 Bee Viewer, Inc. Alle rechten voorbehouden.</footer>
+<script>
+    const tijdKiezer = document.getElementById('tijd-kiezer');
+    tijdKiezer.addEventListener('input', () => {
+        console.log('Geselecteerd tijdstip:', tijdKiezer.value);
+    });
+</script>
+</body>
+</html>
